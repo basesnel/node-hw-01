@@ -1,52 +1,52 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "Windows 1.0",
     "rtm": "November 20, 1985",
     "ga": "November 20, 1985",
     "preceded": null,
     "succeded": ["Windows 2.0 (1987)"],
-    "pcreleases": [1, 2, 3, 4],
+    "pcreleases": ["1", "2", "3", "4"],
     "svreleases": null
   },
   {
-    "id": 2,
+    "id": "2",
     "name": "Windows 2.0",
     "rtm": "December 9, 1987",
     "ga": "December 9, 1987",
     "preceded": ["Windows 1.0 (1985)"],
     "succeded": ["Windows 2.1 (1988)"],
-    "pcreleases": [5, 6],
+    "pcreleases": ["5", "6"],
     "svreleases": null
   },
   {
-    "id": 3,
+    "id": "3",
     "name": "Windows 2.1",
     "rtm": "May 27, 1988",
     "ga": "May 27, 1988",
     "preceded": ["Windows 2.0 (1985)"],
     "succeded": ["Windows 3.0 (1990)"],
-    "pcreleases": [7, 8],
+    "pcreleases": ["7", "8"],
     "svreleases": null
   },
   {
-    "id": 4,
+    "id": "4",
     "name": "Windows 3.0",
     "rtm": "May 22, 1990",
     "ga": "May 22, 1990",
     "preceded": ["Windows 2.1 (1988)"],
     "succeded": ["Windows 3.1 (1992)"],
-    "pcreleases": [9],
+    "pcreleases": ["9"],
     "svreleases": null
   },
   {
-    "id": 5,
+    "id": "5",
     "name": "Windows 3.1",
     "rtm": "April 6, 1992",
     "ga": "April 6, 1992",
     "preceded": ["Windows 3.0 (1990)"],
     "succeded": ["Windows 95 (1995)", "Windows NT 3.1 (1993)"],
-    "pcreleases": [10, 11, 13, 14, 15],
+    "pcreleases": ["10", "11", "13", "14", "15"],
     "svreleases": null
   },
   {
