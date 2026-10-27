@@ -1,10 +1,17 @@
 const express = require("express");
+const Joi = require("joi");
 
 const versions = require("../../models/versions");
 
 const { HttpError } = require("../../helpers");
 
 const router = express.Router();
+
+const addVersion = Joi.object({
+  name: Joi.string().required(),
+  rtm: Joi.string().required(),
+  ga: Joi.string().required(),
+});
 
 router.get("/", async (req, res, next) => {
   try {
@@ -30,6 +37,10 @@ router.get("/:id", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
+    const { error } = addVersion.validate(req.body);
+    if (error) {
+      throw HttpError(400, error.message);
+    }
     const result = await versions.add(req.body);
     res.status(201).json(result);
   } catch (error) {
