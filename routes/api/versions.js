@@ -48,11 +48,24 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.delete("/:versionId", async (req, res, next) => {
-  res.json({ message: "template message" });
+router.put("/:id", async (req, res, next) => {
+  try {
+    const { error } = addVersion.validate(req.body);
+    if (error) {
+      throw HttpError(400, error.message);
+    }
+    const { id } = req.params;
+    const result = await versions.updateById(id, req.body);
+    if (!result) {
+      throw HttpError(404, "Not found");
+    }
+    res.json(result);
+  } catch (error) {
+    next(error);
+  }
 });
 
-router.put("/:versionId", async (req, res, next) => {
+router.delete("/:versionId", async (req, res, next) => {
   res.json({ message: "template message" });
 });
 
