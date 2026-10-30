@@ -65,8 +65,17 @@ router.put("/:id", async (req, res, next) => {
   }
 });
 
-router.delete("/:versionId", async (req, res, next) => {
-  res.json({ message: "template message" });
+router.delete("/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const result = await versions.deleteById(id);
+    if (!result) {
+      throw HttpError(404, "Not found");
+    }
+    res.status(204).json({ message: "Delete success" });
+  } catch (error) {
+    next(error);
+  }
 });
 
 module.exports = router;
